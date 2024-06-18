@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Bola implements Comparable<Bola>{
     public static final Comparator<Bola> SORT_NUMBER = Comparator.comparingInt(o -> o.numero);
+
     public int numero;
     private int color;
 

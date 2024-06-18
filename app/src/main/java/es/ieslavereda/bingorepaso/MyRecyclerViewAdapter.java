@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import es.ieslavereda.bingorepaso.R;
@@ -66,7 +67,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     public void sortNumber(){
-        aux.sort(Bola.SORT_NUMBER);
+        Comparator<Bola> COMPARATOR_BOLA = new Comparator<Bola>() {
+            @Override
+            public int compare(Bola o1, Bola o2) {
+                return Integer.compare(o1.numero, o2.numero);
+            }
+        };
+        aux.sort(COMPARATOR_BOLA);
         notifyDataSetChanged();
     }
 

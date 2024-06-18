@@ -47,7 +47,7 @@ public class Cartones extends LinearLayout {
         }
         int i =0;
         for (Integer numero : numeroEnCartones.keySet()){
-            TextView textView = createTextView(numero, i);
+            TextView textView = createTextView(numero, i++);
             views.put(numero,textView);
             addView(textView);
         }
@@ -66,7 +66,7 @@ public class Cartones extends LinearLayout {
     }
 public boolean checK(int numero){
         if (numeroEnCartones.keySet().contains(numero)){
-            numeroEnCartones.put(numero,true);
+            numeroEnCartones.replace(numero,true);
             views.get(numero).setBackground(getContext().getDrawable(R.color.orange));
             return checkWin();
         }
